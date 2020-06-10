@@ -6,6 +6,7 @@ import java.util.Arrays;
 public class Car extends Vehicle {
 
 	public Car(String plate, String brand, String color) {
+
 		super(plate, brand, color);
 	}
 
@@ -29,6 +30,7 @@ public class Car extends Vehicle {
 	}
 
 	public String getCar() {
+
 		return "Plate: "+plate+" Brand: "+brand+" Color: "+color;
 	}
 
