@@ -1,6 +1,7 @@
 package com.vehicles.project;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public abstract class Vehicle {
@@ -14,5 +15,10 @@ public abstract class Vehicle {
 		this.plate = plate;
 		this.brand = brand;
 		this.color = color;
+	}
+
+	public String getWheels() {
+
+		return "wheels:"+ Arrays.toString(wheels.toArray());
 	}
 }

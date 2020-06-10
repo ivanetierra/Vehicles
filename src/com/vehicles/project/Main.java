@@ -1,6 +1,7 @@
 package com.vehicles.project;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class Main {
 
@@ -13,10 +14,37 @@ public class Main {
 
         Car car1 = new Car(plate, brand, color );
 
-        String brandWheel = JOptionPane.showInputDialog("Wheel brand:");
-        double diameter = Double.parseDouble(JOptionPane.showInputDialog("Diameter"));
 
-        Wheel wheelCar1 = new Wheel(brandWheel, diameter);
+        //Back Wheels
+        String backWheelsBrand = JOptionPane.showInputDialog("Back Wheels' brand:");
+        double backWheelsDiameter = Double.parseDouble(JOptionPane.showInputDialog("Back Wheels' diameter: "));
+
+        Wheel backWheelCar1 = new Wheel(backWheelsBrand, backWheelsDiameter);
+
+        ArrayList<Wheel> backWheels = new ArrayList<Wheel>();
+
+        backWheels.add(backWheelCar1);
+        backWheels.add(backWheelCar1);
+
+
+        //Front Wheels
+        String frontWheelsBrand = JOptionPane.showInputDialog("Front Wheels' brand:");
+        double frontWheelsDiameter = Double.parseDouble(JOptionPane.showInputDialog("Front Wheels' Diameter: "));
+
+        Wheel frontWheelCar1 = new Wheel(frontWheelsBrand, frontWheelsDiameter);
+
+        ArrayList<Wheel> frontWheels = new ArrayList<Wheel>();
+
+        frontWheels.add(frontWheelCar1);
+        frontWheels.add(frontWheelCar1);
+
+
+        System.out.println(car1.getCar());
+        System.out.println(car1.getWheels());
+
+
+
+
 
 
 

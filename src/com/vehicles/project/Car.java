@@ -1,6 +1,7 @@
 package com.vehicles.project;
 
 import java.util.List;
+import java.util.Arrays;
 
 public class Car extends Vehicle {
 
@@ -8,7 +9,7 @@ public class Car extends Vehicle {
 		super(plate, brand, color);
 	}
 
-	public void addWheels(List<Wheel> frontWheels, List<Wheel> backWheels) throws Exception {
+	public void addWheels(List<Wheel> backWheels, List<Wheel> frontWheels) throws Exception {
 		addTwoWheels(frontWheels);
 		addTwoWheels(backWheels);
 	}
@@ -26,5 +27,14 @@ public class Car extends Vehicle {
 		this.wheels.add(leftWheel);
 		this.wheels.add(rightWheel);
 	}
+
+	public String getCar() {
+		return "Plate: "+plate+" Brand: "+brand+" Color: "+color;
+	}
+
+
+
+
+
 
 }
