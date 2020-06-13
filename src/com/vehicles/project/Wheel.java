@@ -8,4 +8,8 @@ public class Wheel {
 		this.brand = brand;
 		this.diameter = diameter;
 	}
+
+	public String getWheel() {
+		return "[Brand: " + brand + ". Diameter: " + diameter + "]";
+	}
 }

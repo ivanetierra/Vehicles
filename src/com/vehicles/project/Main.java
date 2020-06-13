@@ -2,58 +2,33 @@ package com.vehicles.project;
 
 import javax.swing.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) throws Exception {
 
-        String plate = JOptionPane.showInputDialog("Car plate:");
-        String brand = JOptionPane.showInputDialog("Car brand:");
-        String color = JOptionPane.showInputDialog("Car color:");
+        String userVehicle = JOptionPane.showInputDialog("create car or bike?");
+        userVehicle.toLowerCase();
 
+        switch (userVehicle) {
 
-        Car car1 = new Car(plate, brand, color );
+            case "bike":
+                Bike bike1 = Bike.createBike();
+                System.out.println(Bike.getBike(bike1));
+                System.out.println("BIKE "+Bike.getWheels());
 
+                break;
 
-        //Back Wheels
-        String backWheelsBrand = JOptionPane.showInputDialog("Back Wheels' brand:");
-        double backWheelsDiameter = Double.parseDouble(JOptionPane.showInputDialog("Back Wheels' diameter: "));
+            case "car":
+                Car car1= Car.createCar();
+                System.out.println(Car.getCar(car1));
+                System.out.println("CAR "+Car.getWheels());
 
-        Wheel backWheelCar1 = new Wheel(backWheelsBrand, backWheelsDiameter);
+                break;
 
-        ArrayList<Wheel> backWheels = new ArrayList<Wheel>();
-
-        backWheels.add(backWheelCar1); //añade las ruedas traseras a la lista backWheels
-        backWheels.add(backWheelCar1);
-
-        car1.addTwoWheels(backWheels); //metodo para añadir las ruedas al Array Wheels general de coche
-
-
-        //Front Wheels
-        String frontWheelsBrand = JOptionPane.showInputDialog("Front Wheels' brand:");
-        double frontWheelsDiameter = Double.parseDouble(JOptionPane.showInputDialog("Front Wheels' Diameter: "));
-
-        Wheel frontWheelCar1 = new Wheel(frontWheelsBrand, frontWheelsDiameter);
-
-        ArrayList<Wheel> frontWheels = new ArrayList<Wheel>();
-
-        frontWheels.add(frontWheelCar1); //añade las ruedas delanteras a la lista frontWheels
-        frontWheels.add(frontWheelCar1);
-
-        car1.addTwoWheels(frontWheels); //metodo para añadir las ruedas al Array Wheels general de coche
-
-
-
-
-        //Print
-        System.out.println(car1.getCar());
-        System.out.println(car1.getWheels());
-
-
-
-
-
-
-
+            default:
+                System.out.println("Can't create this vehicle.");
+        }
     }
 }
