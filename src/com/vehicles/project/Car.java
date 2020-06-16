@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.vehicles.project.Main.checkDiameter;
+import static com.vehicles.project.Main.checkPlate;
+
 public class Car extends Vehicle {
 
 
